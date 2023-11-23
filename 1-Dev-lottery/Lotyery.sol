@@ -16,13 +16,18 @@ contract Lottery {
     }
 
     function deposit() public payable {
-        require(msg.value >= 1 ether);
-        players.push(msg.sender);
+        require(msg.value >= 1 ether, "Minimum deposit is 1 ether");
+
+        // Use a temporary variable to store the new address
+        address payable newPlayer = payable(msg.sender);
+
+        // Push the new address into the array
+        players.push(newPlayer);
     }
 
     function generateRandom() public view returns (uint) {
         uint random = uint(
-            keccak256(abi.encodePacked(now, block.difficulty, players.length))
+            keccak256(abi.encodePacked(block.timestamp, block.prevrandao, players.length))
         );
         return random;
     }
@@ -31,7 +36,7 @@ contract Lottery {
         uint genetated = generateRandom();
         uint index = genetated % players.length;
 
-        address winner = players[index];
+        address payable winner = players[index];
 
         winner.transfer(address(this).balance);
 
