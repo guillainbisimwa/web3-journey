@@ -1,6 +1,6 @@
 # web3-journey
 
-## 1 Lottery Smart Contract
+## 1. Lottery Smart Contract
 
 This Solidity smart contract implements a simple lottery system on the Ethereum blockchain. Participants can deposit a minimum amount of ether to join the lottery, and the contract owner has the ability to randomly select a winner from the pool of participants. The selected winner receives the total balance of the contract.
 
@@ -27,6 +27,93 @@ This Solidity smart contract implements a simple lottery system on the Ethereum 
 - **Deposit Requirements:** Participants must deposit a minimum of 1 ether to enter the lottery.
 
 - **Random Number Generation:** The `generateRandom` function uses a combination of the current timestamp, previous block hash, and the number of participants to generate a pseudo-random number.
+
+
+##  2. LearnWeb3 First dApp Documentation
+
+This documentation provides step-by-step instructions to set up and run the LearnWeb3 First dApp, which consists of a simple webpage and a smart contract on the Sepolia test network.
+
+### Introduction
+
+The 2dApp is a decentralized application (dApp) that allows users to set or get their mood using a simple webpage. The dApp interacts with a smart contract deployed on the Sepolia test network. Users can set their mood, retrieve their mood, and view the result on the webpage.
+
+---
+
+### 2. Files Overview
+
+The project includes two main files:
+
+#### a. `index.html`
+This file contains the HTML and JavaScript code for the webpage. It includes functionality to set and get the mood using the connected smart contract.
+
+#### b. `Mood.sol`
+This file contains the Solidity code for the smart contract named `Mood`. It includes functions to set and get the mood.
+
+---
+
+### 3. Smart Contract
+
+```solidity
+// SPDX-License-Identifier: MIT 
+pragma solidity ^0.7.4;
+
+contract Mood {
+    string mood;
+
+    function setMood(string memory _mood) public {
+        mood = _mood;
+    }
+
+    function getMood() public view returns (string memory) {
+        return mood;
+    }
+}
+```
+
+This Solidity smart contract allows users to set and get their mood. It has two functions: `setMood` to set the mood and `getMood` to retrieve the current mood.
+
+---
+
+### 4. Prerequisites
+
+Before running the LearnWeb3 First dApp, ensure you have the following prerequisites:
+
+- MetaMask installed and set up
+- MetaMask configured for the Sepolia test network
+- Sepolia Testnet ETH from the Sepolia Faucet
+- A code editor (e.g., Visual Studio Code)
+- Node.js installed (LTS version recommended)
+- Lite-server installed (`npm install -g lite-server`)
+
+---
+
+### 5. Installation and Setup
+
+1. Open the project in your code editor.
+
+1. Open a terminal and install lite-server:
+
+   ```bash
+   npm install -g lite-server
+   ```
+
+1. Start the lite-server:
+
+   ```bash
+   lite-server
+   ```
+
+---
+
+### 6. Testing the 2dApp
+
+1. Open MetaMask and ensure it is connected to the Sepolia test network.
+
+2. Visit the lite-server URL provided in the terminal (usually http://localhost:3000) in your web browser.
+
+3. Use the provided input field and buttons on the webpage to set and get your mood.
+
+4. Interact with the smart contract on Sepolia Testnet through MetaMask.
 
 
 ## Getting Started
