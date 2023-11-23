@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.7.4;
 
 contract Lottery {
     address public owner;
@@ -27,7 +27,7 @@ contract Lottery {
 
     function generateRandom() public view returns (uint) {
         uint random = uint(
-            keccak256(abi.encodePacked(block.timestamp, block.prevrandao, players.length))
+            keccak256(abi.encodePacked(block.timestamp, block.difficulty, players.length)) //prevrandao
         );
         return random;
     }
