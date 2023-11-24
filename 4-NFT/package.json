@@ -1,0 +1,13 @@
+{
+  "name": "4-nft",
+  "version": "1.0.0",
+  "description": "Build the smart contract",
+  "main": "index.js",
+  "repository": "https://github.com/guillainbisimwa/web3-journey",
+  "author": "Guillain BISIMWA",
+  "license": "MIT",
+  "dependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.1"
+  }
+}
