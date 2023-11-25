@@ -115,6 +115,73 @@ Before running the LearnWeb3 First dApp, ensure you have the following prerequis
 
 4. Interact with the smart contract on Sepolia Testnet through MetaMask.
 
+## 4 - NFT
+
+# NFTee: Create Your Own NFT Contract
+
+## Overview
+
+This code provides a step-by-step tutorial on how to create a basic NFT (Non-Fungible Token) contract on the Ethereum network. Check here the process of writing the Solidity contract code, deploying it to a test network using Hardhat, and additional setup instructions.
+
+### Prerequisites
+
+Before you begin, make sure you have the following prerequisites installed and set up:
+
+- [MetaMask](https://metamask.io/) installed and configured.
+- [Node.js](https://nodejs.org/) installed (LTS version recommended).
+
+## Setting up Hardhat
+
+To build the smart contract, we use Hardhat, an Ethereum development environment. Follow these steps to set up your Hardhat project:
+
+1. Open a terminal and navigate to the project folder.
+2. Initialize a Node.js project and install Hardhat:
+   ```bash
+   npm init --yes
+   npm install --save-dev hardhat @nomicfoundation/hardhat-toolbox
+   ```
+
+Run the interactive CLI to set up your project:
+
+```bash
+npx hardhat
+Select "Create a JavaScript Project" and answer additional questions.
+```
+Installing OpenZeppelin Contracts
+Install OpenZeppelin Contracts, which provides templates for NFT Contracts:
+
+```bash
+npm install --save-dev @openzeppelin/contracts
+```
+Writing the NFT Contract
+Create a new Solidity file (e.g., NFTee.sol) inside the contracts folder 
+
+
+Compile the contract:
+
+
+```bash
+npx hardhat compile
+
+```
+Configuring the Network
+Create a `.env` file with your Quicknode RPC URL and private key:
+
+
+```bash
+QUICKNODE_RPC_URL="your_quicknode_rpc_url"
+PRIVATE_KEY="your_private_key"
+
+```
+
+Deploying Your Contract
+Deploy your contract to the Sepolia Test Network:
+
+
+```bash
+npx hardhat run scripts/deploy.js --network sepolia
+
+```
 
 ## Getting Started
 
